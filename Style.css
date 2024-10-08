@@ -13,20 +13,21 @@ body {
 }
 img {
     width: 80px;
-    border-radius: 80px;
+    border-radius: 50%;
+    transition-duration: 0.2s;
 }
 .name {
     color: var(--White);
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 6px;
-    margin-top: 20px;
+    margin-bottom: 3.5%;
+    margin-top: 11.4%;
 }
 .location {
     color: var(--Green);
     font-size: 14px;
     font-weight: 600;
-    margin-top: 6px;
+    margin-top: 3.3%;
 }
 .bio {
     color: var(--White);
@@ -36,12 +37,13 @@ img {
 a.item {
     background-color: var(--Grey700);
     display: block;
-    width: 275px;
+    width: 270px;
     text-align: center;
     color: var(--White);
-    border-radius: 8px;
+    border-radius: 4%;
+    margin: 0px;
+    margin-bottom: 5.5%;
     padding: 15px;
-    margin: 15px;
     transition-duration: 0.2s;
 }
 a {
@@ -55,29 +57,44 @@ a.item:hover {
     color: var(--Grey900);
     background-color: var(--Green);
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: var(--White);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--Grey700);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--Green);
+}
 
 
 
 
 .layout {
     display: grid;
-    grid-template-columns: 1440px;
+    grid-template-columns: fit-content;
     grid-template-rows: 1fr 30px;
     grid-template-areas: 
      'content'
      'attribute';
-     justify-content: center;
-     justify-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: auto;
 }
 .container {
     grid-area: content;
     background-color: var(--Grey800);
     width: 400px;
-    height: 625px;
-    border-radius: 10px;
+    height: 610px;
+    border-radius: 2.5%;
+    margin: 25%;
     display: grid;
-    grid-template-columns: 301px;
-    grid-template-rows: 80px 85px 40px 350px;
+    grid-template-columns: fit-content;
+    grid-template-rows: repeat(4, auto);
     grid-template-areas: 
      'avatar'
      'info'
@@ -87,7 +104,7 @@ a.item:hover {
      justify-items: center;
      align-content: center;
      justify-content: center;
-     margin: 100px;
+     transition-duration: 0.2s;
    
 }
 .avatar {
@@ -107,4 +124,50 @@ a.item:hover {
     grid-area: attribute;
     color: var(--White);
     font-family: "Inter";
+}
+
+
+
+
+@media (min-height: 1440px) {
+    .container {
+        width: 600px;
+        height: 970px;
+    }
+    img {
+        width: 150px;
+    }
+    .name {
+        font-size: 48px;
+    }
+    .location {
+        font-size: 24px;
+    }
+    .bio {
+        font-size: 24px;
+    }
+    a.item {
+        width: 450px;
+        padding: 20px;
+        font-size: 24px;
+    }
+}
+@media (max-width: 415px) {
+    .container {
+        width: 330px;
+    }
+}
+@media (max-width: 340px) {
+    .container {
+        width: 260px;
+        height: 490px;
+    }
+    a.item {
+        width: 180px;
+        padding: 8px;
+        border-radius: 5px;
+    }
+    .bio {
+        font-size: 12px;
+    }
 }
